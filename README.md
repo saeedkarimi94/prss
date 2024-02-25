@@ -38,22 +38,24 @@ go run main.go
 - Once the application is running, access the API endpoint at http://localhost:8080/api/zoomg to retrieve the zoomg RSS feed in JSON format.
 
 ## API Endpoints
-GET /api/zoomit
+
+
+> GET /api/zoomit |
 Fetches the Zoomit RSS feed and returns it as JSON.
 
-GET /api/digiato
+> GET /api/digiato |
 Fetches the Digiato RSS feed and returns it as JSON.
 
-GET /api/tabnak
+> GET /api/tabnak |
 Fetches the tabnak RSS feed and returns it as JSON.
 
-GET /api/tasnim
+> GET /api/tasnim |
 Fetches the tasnim RSS feed and returns it as JSON.
 
-GET /api/yjc
+> GET /api/yjc |
 Fetches the yjc RSS feed and returns it as JSON.
 
-GET /api/zoomg
+> GET /api/zoomg |
 Fetches the zoomg RSS feed and returns it as JSON.
 
 
