@@ -11,6 +11,7 @@ This project focuses on web scraping and crawling news articles from various Ira
 | All     | [Tasnim](https://www.tasnimnews.com)      | RSS     |
 | All     | [Tabnak](https://www.tabnak.ir)      | RSS     |
 | All     | [Yjc](https://www.yjc.ir)     | RSS     |
+| Gaming & Movie     | [Yjc](https://www.zoomg.ir)     | RSS     |
 
 ## Table of Contents
 - [Installation](#installation)
@@ -29,11 +30,12 @@ go run main.go
 ```
 
 ## Usage
-- Once the application is running, access the API endpoint at http://localhost:8080/api/zoomit to retrieve the Zoomit RSS feed in JSON format.
-- Once the application is running, access the API endpoint at http://localhost:8080/api/digiato to retrieve the Digiato RSS feed in JSON format.
-- Once the application is running, access the API endpoint at http://localhost:8080/api/tabnak to retrieve the Digiato RSS feed in JSON format.
-- Once the application is running, access the API endpoint at http://localhost:8080/api/tasnim to retrieve the Digiato RSS feed in JSON format.
-- Once the application is running, access the API endpoint at http://localhost:8080/api/yjc to retrieve the Digiato RSS feed in JSON format.
+- Once the application is running, access the API endpoint at http://localhost:8080/api/zoomit to retrieve the zoomit RSS feed in JSON format.
+- Once the application is running, access the API endpoint at http://localhost:8080/api/digiato to retrieve the digiato RSS feed in JSON format.
+- Once the application is running, access the API endpoint at http://localhost:8080/api/tabnak to retrieve the tabnak RSS feed in JSON format.
+- Once the application is running, access the API endpoint at http://localhost:8080/api/tasnim to retrieve the tasnim RSS feed in JSON format.
+- Once the application is running, access the API endpoint at http://localhost:8080/api/yjc to retrieve the yjc RSS feed in JSON format.
+- Once the application is running, access the API endpoint at http://localhost:8080/api/zoomg to retrieve the zoomg RSS feed in JSON format.
 
 ## API Endpoints
 GET /api/zoomit
@@ -50,6 +52,10 @@ Fetches the tasnim RSS feed and returns it as JSON.
 
 GET /api/yjc
 Fetches the yjc RSS feed and returns it as JSON.
+
+GET /api/zoomg
+Fetches the zoomg RSS feed and returns it as JSON.
+
 
 ## Error Handling
 The API provides structured error responses for various scenarios:

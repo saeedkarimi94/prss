@@ -12,6 +12,7 @@ import (
 	"github.com/einkaaf/prss/model/tabnak"
 	"github.com/einkaaf/prss/model/tasnim"
 	"github.com/einkaaf/prss/model/yjc"
+	"github.com/einkaaf/prss/model/zoomg"
 	"github.com/einkaaf/prss/model/zoomit"
 	"github.com/gin-gonic/gin"
 )
@@ -106,6 +107,21 @@ func TabnakHandler(c *gin.Context) {
 func YJCHandler(c *gin.Context) {
 	var data yjc.Rss
 	if err := fetchData(c, constants.YJCFeedURL, &data); err != nil {
+		handleError(c, http.StatusInternalServerError, err.Error())
+		return
+	}
+
+	res, err := json.Marshal(data)
+	if err != nil {
+		handleError(c, http.StatusInternalServerError, "Failed to convert data to JSON")
+		return
+	}
+
+	c.JSON(http.StatusOK, string(res))
+}
+func ZoomgHandler(c *gin.Context) {
+	var data zoomg.Rss
+	if err := fetchData(c, constants.ZoomgFeedURL, &data); err != nil {
 		handleError(c, http.StatusInternalServerError, err.Error())
 		return
 	}
