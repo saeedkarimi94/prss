@@ -8,4 +8,6 @@ const (
 	YJCFeedURL        = "https://www.yjc.ir/fa/rss/allnews"
 	ZoomgFeedURL      = "https://www.zoomg.ir/feed/"
 	KhodroBankFeedURL = "https://www.khodrobank.com/RSS/RSS.ashx"
+
+	CarIRPriceURL = "https://api.car.ir/car-prices"
 )

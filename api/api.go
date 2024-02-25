@@ -17,6 +17,7 @@ func SetupRouters() *gin.Engine {
 		router.YJC_Router(api)
 		router.Zoomg_Router(api)
 		router.Khodrobank_Router(api)
+		router.CarPrice_Router(api)
 	}
 
 	return engine

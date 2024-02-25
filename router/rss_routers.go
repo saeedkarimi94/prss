@@ -32,3 +32,7 @@ func Zoomg_Router(r *gin.RouterGroup) {
 func Khodrobank_Router(r *gin.RouterGroup) {
 	r.GET("/khodrobank", handler.KhodroBankHandler)
 }
+
+func CarPrice_Router(r *gin.RouterGroup) {
+	r.GET("/carprice", handler.CarPriceHandler)
+}

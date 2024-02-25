@@ -8,6 +8,7 @@ import (
 	"net/http"
 
 	"github.com/einkaaf/prss/constants"
+	carir "github.com/einkaaf/prss/model/car_ir"
 	"github.com/einkaaf/prss/model/digiato"
 	"github.com/einkaaf/prss/model/khodrobank"
 	"github.com/einkaaf/prss/model/tabnak"
@@ -36,6 +37,29 @@ func fetchData(c *gin.Context, url string, target interface{}) error {
 
 	if err := xml.Unmarshal(responseBody, target); err != nil {
 		return fmt.Errorf("invalid XML format: %v", err)
+	}
+
+	return nil
+}
+
+func fetchJsonData(c *gin.Context, url string, target interface{}) error {
+	resp, err := http.Post(url, "application/json; charset=utf-8", nil)
+	if err != nil {
+		return fmt.Errorf("failed to fetch the RSS feed: %v", err)
+	}
+	defer resp.Body.Close()
+
+	if resp.StatusCode != http.StatusOK {
+		return fmt.Errorf("unexpected status code: %d", resp.StatusCode)
+	}
+
+	responseBody, err := io.ReadAll(resp.Body)
+	if err != nil {
+		return fmt.Errorf("failed to read the response body: %v", err)
+	}
+
+	if err := json.Unmarshal(responseBody, target); err != nil {
+		return fmt.Errorf("invalid Json format: %v", err)
 	}
 
 	return nil
@@ -140,6 +164,22 @@ func ZoomgHandler(c *gin.Context) {
 func KhodroBankHandler(c *gin.Context) {
 	var data khodrobank.Rss
 	if err := fetchData(c, constants.KhodroBankFeedURL, &data); err != nil {
+		handleError(c, http.StatusInternalServerError, err.Error())
+		return
+	}
+
+	res, err := json.Marshal(data)
+	if err != nil {
+		handleError(c, http.StatusInternalServerError, "Failed to convert data to JSON")
+		return
+	}
+
+	c.JSON(http.StatusOK, string(res))
+}
+
+func CarPriceHandler(c *gin.Context) {
+	var data carir.CarIR
+	if err := fetchJsonData(c, constants.CarIRPriceURL, &data); err != nil {
 		handleError(c, http.StatusInternalServerError, err.Error())
 		return
 	}
