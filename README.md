@@ -11,7 +11,7 @@ This project focuses on web scraping and crawling news articles from various Ira
 | All     | [Tasnim](https://www.tasnimnews.com)      | RSS     |
 | All     | [Tabnak](https://www.tabnak.ir)      | RSS     |
 | All     | [Yjc](https://www.yjc.ir)     | RSS     |
-| Gaming & Movie     | [Yjc](https://www.zoomg.ir)     | RSS     |
+| Gaming & Movie     | [Zoomg](https://www.zoomg.ir)     | RSS     |
 
 ## Table of Contents
 - [Installation](#installation)
