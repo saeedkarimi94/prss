@@ -1,6 +1,13 @@
 # Rss API Integration
 
-A simple Go program using the Gin framework to create an API endpoint that fetches an RSS feed from [Zoomit](https://www.zoomit.ir/feed/) and returns it as JSON.
+A Go program using the Gin framework to create an API endpoint that fetches an RSS feed from Some Persian News (see them in below) Website and returns it as JSON.
+| Category | Web Link | Type of Crawl |
+|  :---:  |     :---:      |          :---: |
+| Tech   | [Zoomit](https://www.zoomit.ir/)     | RSS    |
+| Tech    | [Digiato](http://www.digiato.com)     | RSS     |
+| All     | [Tasnim](https://www.tasnimnews.com)      | RSS     |
+| All     | [Tabnak](https://www.tabnak.ir)      | RSS     |
+| All     | [Yjc](https://www.yjc.ir)     | RSS     |
 
 ## Table of Contents
 - [Installation](#installation)
@@ -21,6 +28,9 @@ go run main.go
 ## Usage
 - Once the application is running, access the API endpoint at http://localhost:8080/api/zoomit to retrieve the Zoomit RSS feed in JSON format.
 - Once the application is running, access the API endpoint at http://localhost:8080/api/digiato to retrieve the Digiato RSS feed in JSON format.
+- Once the application is running, access the API endpoint at http://localhost:8080/api/tabnak to retrieve the Digiato RSS feed in JSON format.
+- Once the application is running, access the API endpoint at http://localhost:8080/api/tasnim to retrieve the Digiato RSS feed in JSON format.
+- Once the application is running, access the API endpoint at http://localhost:8080/api/yjc to retrieve the Digiato RSS feed in JSON format.
 
 ## API Endpoints
 GET /api/zoomit
@@ -28,6 +38,15 @@ Fetches the Zoomit RSS feed and returns it as JSON.
 
 GET /api/digiato
 Fetches the Digiato RSS feed and returns it as JSON.
+
+GET /api/tabnak
+Fetches the tabnak RSS feed and returns it as JSON.
+
+GET /api/tasnim
+Fetches the tasnim RSS feed and returns it as JSON.
+
+GET /api/yjc
+Fetches the yjc RSS feed and returns it as JSON.
 
 ## Error Handling
 The API provides structured error responses for various scenarios:
