@@ -1,6 +1,9 @@
+A Go program using the Gin framework to create an API endpoint that fetches an RSS feed from Some Persian News (see them in below) Website and returns it as JSON.
+
 # Rss API Integration
 
-A Go program using the Gin framework to create an API endpoint that fetches an RSS feed from Some Persian News (see them in below) Website and returns it as JSON.
+This project focuses on web scraping and crawling news articles from various Iranian news websites. It utilizes Golang for efficient web crawling and JSON data generation. The primary goal is to provide a tool that gathers up-to-date news content and sends it in a structured JSON format to individuals or systems that require this information.
+
 | Category | Web Link | Type of Crawl |
 |  :---:  |     :---:      |          :---: |
 | Tech   | [Zoomit](https://www.zoomit.ir/)     | RSS    |
