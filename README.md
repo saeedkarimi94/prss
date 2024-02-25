@@ -59,4 +59,4 @@ The API provides structured error responses for various scenarios:
 If you'd like to contribute to this project, feel free to open an issue or submit a pull request. Please follow the Contribution Guidelines.
 
 ## License
-This Zoomit API Integration is licensed under the MIT License. See the LICENSE file for details.
+This PRSS (Persian RSS) Integration is licensed under the MIT License. See the LICENSE file for details.
