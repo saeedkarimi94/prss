@@ -12,6 +12,7 @@ This project focuses on web scraping and crawling news articles from various Ira
 | All     | [Tabnak](https://www.tabnak.ir)      | RSS     |
 | All     | [Yjc](https://www.yjc.ir)     | RSS     |
 | Gaming & Movie     | [Zoomg](https://www.zoomg.ir)     | RSS     |
+| Car     | [KhodroBank](https://www.khodrobank.com/)     | RSS     |
 
 ## Table of Contents
 - [Installation](#installation)
@@ -36,6 +37,7 @@ go run main.go
 - Once the application is running, access the API endpoint at http://localhost:8080/api/tasnim to retrieve the tasnim RSS feed in JSON format.
 - Once the application is running, access the API endpoint at http://localhost:8080/api/yjc to retrieve the yjc RSS feed in JSON format.
 - Once the application is running, access the API endpoint at http://localhost:8080/api/zoomg to retrieve the zoomg RSS feed in JSON format.
+- Once the application is running, access the API endpoint at http://localhost:8080/api/khodrobank to retrieve the khodrobank RSS feed in JSON format.
 
 ## API Endpoints
 
@@ -58,6 +60,8 @@ Fetches the yjc RSS feed and returns it as JSON.
 > GET /api/zoomg |
 Fetches the zoomg RSS feed and returns it as JSON.
 
+> GET /api/khodrobank |
+Fetches the khodrobank RSS feed and returns it as JSON.
 
 ## Error Handling
 The API provides structured error responses for various scenarios:

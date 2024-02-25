@@ -24,6 +24,11 @@ func Tabnak_Router(r *gin.RouterGroup) {
 func YJC_Router(r *gin.RouterGroup) {
 	r.GET("/yjc", handler.YJCHandler)
 }
+
 func Zoomg_Router(r *gin.RouterGroup) {
 	r.GET("/zoomg", handler.ZoomgHandler)
+}
+
+func Khodrobank_Router(r *gin.RouterGroup) {
+	r.GET("/khodrobank", handler.KhodroBankHandler)
 }

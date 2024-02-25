@@ -16,6 +16,7 @@ func SetupRouters() *gin.Engine {
 		router.Tabnak_Router(api)
 		router.YJC_Router(api)
 		router.Zoomg_Router(api)
+		router.Khodrobank_Router(api)
 	}
 
 	return engine

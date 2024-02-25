@@ -9,6 +9,7 @@ import (
 
 	"github.com/einkaaf/prss/constants"
 	"github.com/einkaaf/prss/model/digiato"
+	"github.com/einkaaf/prss/model/khodrobank"
 	"github.com/einkaaf/prss/model/tabnak"
 	"github.com/einkaaf/prss/model/tasnim"
 	"github.com/einkaaf/prss/model/yjc"
@@ -119,9 +120,26 @@ func YJCHandler(c *gin.Context) {
 
 	c.JSON(http.StatusOK, string(res))
 }
+
 func ZoomgHandler(c *gin.Context) {
 	var data zoomg.Rss
 	if err := fetchData(c, constants.ZoomgFeedURL, &data); err != nil {
+		handleError(c, http.StatusInternalServerError, err.Error())
+		return
+	}
+
+	res, err := json.Marshal(data)
+	if err != nil {
+		handleError(c, http.StatusInternalServerError, "Failed to convert data to JSON")
+		return
+	}
+
+	c.JSON(http.StatusOK, string(res))
+}
+
+func KhodroBankHandler(c *gin.Context) {
+	var data khodrobank.Rss
+	if err := fetchData(c, constants.KhodroBankFeedURL, &data); err != nil {
 		handleError(c, http.StatusInternalServerError, err.Error())
 		return
 	}
